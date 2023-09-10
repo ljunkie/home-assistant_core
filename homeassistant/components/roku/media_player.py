@@ -127,7 +127,7 @@ class RokuMediaPlayer(RokuEntity, MediaPlayerEntity):
         if self.coordinator.data.media is None or self.coordinator.data.media.live:
             return False
 
-        return self.coordinator.data.media.duration > 0
+        return self.coordinator.data.media.duration > 0 or self.coordinator.data.media.position > 0
 
     @property
     def device_class(self) -> MediaPlayerDeviceClass:
